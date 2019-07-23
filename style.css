@@ -736,6 +736,7 @@ object {
 	color: #333333;
 }
 
+/* Responsive Menu */ 
 .menu-toggle {
 	background-color: transparent;
 	border: 1px solid white;
