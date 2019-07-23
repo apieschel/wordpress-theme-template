@@ -17,7 +17,15 @@
 	<div class="site-info">
 		<?php dynamic_sidebar("footer_sections"); ?>
 	</div><!-- .site-info -->
-	<p class="copyright">Copyright ©<?php echo date("Y"); ?>. All Rights Reserved. &nbsp;&nbsp;&nbsp; Website by <a target="_blank" href="https://www.gtrsoftware.com/">Golden Triangle Software</a></p>
+	
+	<p class="copyright">
+		<?php esc_html_e('Copyright', 'theme-name'); ?> ©<?php echo esc_html(date_i18n('Y')); ?>. 
+		<?php esc_html_e('All Rights Reserved. Website by', 'theme-name'); ?> 
+
+		<a target="_blank" href="<?php echo esc_url('https://www.gtrsoftware.com/'); ?>">
+			<?php echo esc_html('Golden Triangle Software'); ?>
+		</a>
+	</p><!--.copyright-->
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
