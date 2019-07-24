@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package Florissant_Valley_Fire
+ * @package theme_name
  */
 
 /**
@@ -14,11 +14,11 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function florissant_valley_fire_jetpack_setup() {
+function theme_name_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => 'florissant_valley_fire_infinite_scroll_render',
+		'render'    => 'theme_name_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
@@ -28,7 +28,7 @@ function florissant_valley_fire_jetpack_setup() {
 	// Add theme support for Content Options.
 	add_theme_support( 'jetpack-content-options', array(
 		'post-details'    => array(
-			'stylesheet' => 'florissant-valley-fire-style',
+			'stylesheet' => 'theme-name-style',
 			'date'       => '.posted-on',
 			'categories' => '.cat-links',
 			'tags'       => '.tags-links',
@@ -42,12 +42,12 @@ function florissant_valley_fire_jetpack_setup() {
 		),
 	) );
 }
-add_action( 'after_setup_theme', 'florissant_valley_fire_jetpack_setup' );
+add_action( 'after_setup_theme', 'theme_name_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function florissant_valley_fire_infinite_scroll_render() {
+function theme_name_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :

@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Florissant_Valley_Fire
+ * @package theme_name
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses florissant_valley_fire_header_style()
+ * @uses theme_name_header_style()
  */
-function florissant_valley_fire_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'florissant_valley_fire_custom_header_args', array(
+function theme_name_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'theme_name_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'florissant_valley_fire_header_style',
+		'wp-head-callback'       => 'theme_name_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'florissant_valley_fire_custom_header_setup' );
+add_action( 'after_setup_theme', 'theme_name_custom_header_setup' );
 
-if ( ! function_exists( 'florissant_valley_fire_header_style' ) ) :
+if ( ! function_exists( 'theme_name_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see florissant_valley_fire_custom_header_setup().
+	 * @see theme_name_custom_header_setup().
 	 */
-	function florissant_valley_fire_header_style() {
+	function theme_name_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

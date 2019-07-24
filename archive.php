@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Florissant_Valley_Fire
+ * @package theme_name
  */
 
 get_header();

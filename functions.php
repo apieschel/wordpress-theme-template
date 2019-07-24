@@ -1,13 +1,13 @@
 <?php
 /**
- * Florissant Valley Fire functions and definitions
+ * Theme Name functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Florissant_Valley_Fire
+ * @package theme_name
  */
 
-if ( ! function_exists( 'florissant_valley_fire_setup' ) ) :
+if ( ! function_exists( 'theme_name_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'florissant_valley_fire_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function florissant_valley_fire_setup() {
+	function theme_name_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Florissant Valley Fire, use a find and replace
-		 * to change 'florissant-valley-fire' to the name of your theme in all the template files.
+		 * If you're building a theme based on Theme Name, use a find and replace
+		 * to change 'theme-name' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'florissant-valley-fire', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'theme-name', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ if ( ! function_exists( 'florissant_valley_fire_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'florissant-valley-fire' ),
+			'menu-1' => esc_html__( 'Primary', 'theme-name' ),
 		) );
 
 		/*
@@ -60,7 +60,7 @@ if ( ! function_exists( 'florissant_valley_fire_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'florissant_valley_fire_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'theme_name_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
@@ -81,7 +81,7 @@ if ( ! function_exists( 'florissant_valley_fire_setup' ) ) :
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', 'florissant_valley_fire_setup' );
+add_action( 'after_setup_theme', 'theme_name_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -90,24 +90,24 @@ add_action( 'after_setup_theme', 'florissant_valley_fire_setup' );
  *
  * @global int $content_width
  */
-function florissant_valley_fire_content_width() {
+function theme_name_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'florissant_valley_fire_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'theme_name_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'florissant_valley_fire_content_width', 0 );
+add_action( 'after_setup_theme', 'theme_name_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function florissant_valley_fire_widgets_init() {
+function theme_name_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'florissant-valley-fire' ),
+		'name'          => esc_html__( 'Sidebar', 'theme-name' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'florissant-valley-fire' ),
+		'description'   => esc_html__( 'Add widgets here.', 'theme-name' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -130,23 +130,23 @@ function florissant_valley_fire_widgets_init() {
 		'id'            => 'home_description'
 	) );
 }
-add_action( 'widgets_init', 'florissant_valley_fire_widgets_init' );
+add_action( 'widgets_init', 'theme_name_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function florissant_valley_fire_scripts() {
-	wp_enqueue_style( 'florissant-valley-fire-style', get_stylesheet_uri() );
+function theme_name_scripts() {
+	wp_enqueue_style( 'theme-name-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'florissant-valley-fire-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'theme-name-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'florissant-valley-fire-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'theme-name-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'florissant_valley_fire_scripts' );
+add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
 
 /**
  * Implement the Custom Header feature.
